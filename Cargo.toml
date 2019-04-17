@@ -5,3 +5,5 @@ authors = ["scottbot3000 <scott.carbonbased@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+clap = "2.33.0"
+criterion = "0.2.11"

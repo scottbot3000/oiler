@@ -1,3 +1,5 @@
+use rayon::prelude::*;
+
 pub fn euler_1(limit: u32) -> u32 {
     let mut sum = 0;
     for i in 1..limit {
@@ -31,4 +33,8 @@ pub fn euler_1_loop(limit: u32) -> u32 {
     }
 
     sum
+}
+
+pub fn euler_1_par_iter(limit: u32) -> u32 {
+    (1..limit).into_par_iter().filter(|i| i % 5 == 0 || i % 3 == 0).sum()
 }

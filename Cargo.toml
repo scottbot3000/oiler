@@ -14,7 +14,7 @@ path = "src/lib.rs"
 
 [[bin]]
 name = "oiler"
-path = "src/bin/main.rs"
+path = "src/main.rs"
 
 [[bench]]
 name = "euler_benchmarks"

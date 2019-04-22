@@ -1,10 +1,8 @@
 #[macro_use]
 extern crate criterion;
 
-use criterion::Criterion;
-use criterion::Bencher;
-use criterion::black_box;
-use criterion::Fun;
+
+use criterion::{Criterion, Bencher, Fun, black_box};
 use oiler::euler::*;
 
 fn bench_e1_loop(b: &mut Bencher, i: &u32) {
@@ -32,7 +30,7 @@ fn bench_e1_loop_improved(b: &mut Bencher, i: &u32) {
 }
 
 fn e1_bench(c: &mut Criterion) {
-    let limit = black_box(1_000_000);
+    let limit = black_box(1_000);
     let for_loop = Fun::new("For Loop", bench_e1_loop);
     let iter = Fun::new("Iterator", bench_e1_iter);
     let par_iter = Fun::new("Parallel Iterator", bench_e1_par_iter);

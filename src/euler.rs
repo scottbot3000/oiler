@@ -18,7 +18,7 @@ pub fn euler_1_loop(limit: u32) -> u32 {
     let mut sum = 0;
     let mut threes = 3;
     let mut fives = 5;
-    
+
     while threes < limit {
         sum += threes;
         threes += 3;
@@ -27,7 +27,9 @@ pub fn euler_1_loop(limit: u32) -> u32 {
     while fives < limit {
         sum += fives;
         fives += 5;
-        if fives >= limit { break }
+        if fives >= limit {
+            break;
+        }
         sum += fives;
         fives += 10;
     }
@@ -36,5 +38,8 @@ pub fn euler_1_loop(limit: u32) -> u32 {
 }
 
 pub fn euler_1_par_iter(limit: u32) -> u32 {
-    (1..limit).into_par_iter().filter(|i| i % 5 == 0 || i % 3 == 0).sum()
+    (1..limit)
+        .into_par_iter()
+        .filter(|i| i % 5 == 0 || i % 3 == 0)
+        .sum()
 }
